@@ -1,6 +1,6 @@
-// run_on_filechange.rs
+// run_on_file_change
 // Usage example:
-//   ./run_on_filechange "cargo run --release" ./src ./tests
+//   ./run_on_file_change "cargo run --release" ./src ./tests
 
 use chrono::Local;
 use nix::libc;
@@ -25,7 +25,7 @@ fn main() -> notify::Result<()> {
   // ----------- Parse CLI --------------------------------------------------
   let mut args = env::args().skip(1); // skip program name
   let cmd_string = args.next().unwrap_or_else(|| {
-    eprintln!("Usage:\n  run_on_filechange \"<command>\" <dir1> [dir2] …");
+    eprintln!("Usage:\n  run_on_file_change \"<command>\" <dir1> [dir2] …");
     std::process::exit(1);
   });
   let paths: Vec<PathBuf> = args.map(PathBuf::from).collect();

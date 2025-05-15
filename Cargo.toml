@@ -1,5 +1,5 @@
 [package]
-name = "run_on_filechange"
+name = "run_on_file_change"
 version = "0.1.0"
 edition = "2024"
 
